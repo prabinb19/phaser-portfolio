@@ -1,5 +1,6 @@
 import { Game as MainGame } from './scenes/Game';
 import Preloader from "./scenes/Preloader";
+import Phaser from 'phaser';
 import { Game, Types } from "phaser";
 
 //  Find out more information about the Game Config at:
@@ -13,6 +14,14 @@ const config: Types.Core.GameConfig = {
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
+    },
+    physics:{
+        default:'arcade',
+        arcade:{
+            gravity:{
+               x:0, y:200
+            }
+        }
     },
     scene: [
         Preloader,MainGame,
